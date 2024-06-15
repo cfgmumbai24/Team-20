@@ -30,7 +30,7 @@ function App() {
               path="/signup"
               element={!user ? <Signup /> : <Navigate to="/" />}
             />
-            <Route path="/test" element={<StoryList />} />
+        
           </Routes>
         </div>
       </BrowserRouter>

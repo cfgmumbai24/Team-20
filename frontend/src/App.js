@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
+import CourseWindow from './components/CourseWindow/CourseWindow'
+
 
 // pages & components
 import Home from './pages/Home'
@@ -27,6 +29,10 @@ function App() {
             <Route 
               path="/signup" 
               element={!user ? <Signup /> : <Navigate to="/" />} 
+            />
+            <Route
+            path="/test"
+            element={<CourseWindow/>}
             />
           </Routes>
         </div>

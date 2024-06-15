@@ -1,0 +1,13 @@
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  @media (max-width: 800px) {
+    .courses {
+      justify-content: flex-start;
+    }
+  }
+  

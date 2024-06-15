@@ -1,0 +1,43 @@
+.myComponent {
+  position: relative;
+  width: 100%;
+  height: 30vh; /* Full height */
+  background-image: url("https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630"); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the div */
+  background-position: center; /* Centers the image */
+  color: white; /* Text color */
+}
+
+.topLeftText {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px; /* Larger font size */
+  font-weight: bold; /* Bold text */
+}
+
+.labelsContainer {
+  position: absolute;
+  top: 40%; /* Position the labels above the middle text */
+  left: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px; /* Space between labels */
+}
+
+.label {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border-radius: 12px; /* Rounded edges */
+  padding: 5px 10px;
+  font-size: 14px;
+  color: white;
+}
+
+.middleLeftText {
+  position: absolute;
+  margin-top: 10px;
+  top: 50%; /* Shifts text to the middle */
+  left: 10px;
+  transform: translateY(-50%); /* Center the text vertically */
+  font-size: 18px; /* Smaller font size */
+}

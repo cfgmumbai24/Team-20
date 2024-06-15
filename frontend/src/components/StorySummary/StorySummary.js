@@ -1,16 +1,23 @@
 import React from 'react';
 import styles from './StorySummary.module.css';
 
-const StorySummary = () => {
+const StorySummary = (props) => {
+  const { Top, Label1, Middle, backgroundImage } = props;
   return (
     <div className={styles.myComponent}>
-      <div className={styles.topLeftText}>Top Left Text</div>
-      <div className={styles.labelsContainer}>
-        <span className={styles.label}>Label 1</span>
-        <span className={styles.label}>Label 2</span>
-        <span className={styles.label}>Label 3</span>
+      <img
+        src={backgroundImage}
+        alt="Background"
+        className={styles.backgroundImage}
+        style={{ opacity: 0.3 }}  
+      />
+      <div className={styles.content}>
+        <div className={styles.topLeftText}>{Top}</div>
+        <div className={styles.labelsContainer}>
+          <span className={styles.label}>{Label1}</span>
+        </div>
+        <div className={styles.middleLeftText}>{Middle}</div>
       </div>
-      <div className={styles.middleLeftText}>Middle Left Text</div>
     </div>
   );
 };

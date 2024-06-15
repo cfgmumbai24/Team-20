@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthContext } from "./hooks/useAuthContext";
 
@@ -9,52 +7,18 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar";
 import Mentor from "./pages/Mentor";
-
-function App() {
-  const { user } = useAuthContext();
-=======
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { useAuthContext } from './hooks/useAuthContext'
-import { useAuthSContext } from './hooks/useAuthSContext'
-
-// pages & components
-import Home from './pages/Home'
-import Login from './pages/Login'
-import Signup from './pages/Signup'
-import SignUpS from './pages/SignUpS'
-import Navbar from './components/Navbar'
-import Mentor from './pages/Mentor'
 import Admin from "./pages/Admin"
 import AdminFund from "./pages/AdminFund"
-=======
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useAuthContext } from "./hooks/useAuthContext";
-import { useAuthSContext } from "./hooks/useAuthSContext";
-
-// pages & components
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import SignUpS from "./pages/SignUpS";
-import Navbar from "./components/Navbar";
-import Mentor from "./pages/Mentor";
-import StoryList from "./components/StoryList/StoryList";
-import StoryDetails from "./components/StoryDetails/StoryDetails";
-import Spinner from "./components/Spinner/Spinner";
 import Welcome from "./components/Welcome/Welcome";
-import StorySummary from "./components/StorySummary/StorySummary";
 import Swarozgar from "./components/Swarrozgar/Swarrozgar";
+import SignUpS from "./pages/SignUpS"
+import { useAuthSContext } from "./hooks/useAuthSContext";
+import StoryList from "./components/StoryList/StoryList"
+import StoryDetails from "./components/StoryDetails/StoryDetails"
 
 function App() {
   const { user } = useAuthContext();
   const { swarozgaruser } = useAuthSContext();
-
-<<<<<<< HEAD
-console.log(swarozgaruser)
->>>>>>> 99a41ab2ecd59b9254ffa687031676557d7efad1
-=======
-  // console.log(swarozgaruser)
->>>>>>> origin/aneesh
 
   return (
     <div className="App">
@@ -73,21 +37,13 @@ console.log(swarozgaruser)
             <Route
               path="/signup"
               element={!user ? <Signup /> : <Navigate to="/" />}
-<<<<<<< HEAD
             />
-            <Route
-              path="/mentor"
-              element={!user ? <Mentor /> : <Navigate to="/mentor" />}
-=======
->>>>>>> origin/aneesh
-            />
-            <Route path="/user/generic_stories" element={<StoryList />} />
+            <Route path="/user/generic_stories" element={<StoryList  />} />
             <Route path="/user/story/:id" element={<StoryDetails />} />
             <Route
               path="/mentor"
               element={!user ? <Mentor /> : <Navigate to="/mentor" />}
             />
-<<<<<<< HEAD
             <Route 
               path="/admin" 
               element={!user ? <Admin /> : <Navigate to="/admin" />} 
@@ -97,10 +53,9 @@ console.log(swarozgaruser)
               element={!user ? <AdminFund /> : <Navigate to="/adminfund" />} 
             />
 
-<Route 
+            <Route 
               path="/signups" 
-              element={ !swarozgaruser ? <SignUpS /> : <Navigate to="/" />} 
-=======
+              element={ !swarozgaruser ? <SignUpS /> : <Navigate to="/" /> }/> 
             <Route
               path="/signups"
               element={!swarozgaruser ? <SignUpS /> : <Navigate to="/" />}

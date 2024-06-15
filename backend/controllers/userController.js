@@ -44,5 +44,20 @@ const signupUser = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+const getAllUsers = async (req, res) => {
+  const allusers = await User.find({}).sort({ createdAt: -1 });
 
-module.exports = { signupUser, loginUser };
+  res.status(200).json(allusers);
+};
+
+const getsingleUser = async (req, res) => {
+  const { id } = req.params;
+  const singleuser = await User.findById(id);
+
+  if (!singleuser) {
+    return res.status(404).json({ error: "No such User" });
+  }
+
+  res.status(200).json(singleuser);
+};
+module.exports = { signupUser, loginUser, getAllUsers, getsingleUser };

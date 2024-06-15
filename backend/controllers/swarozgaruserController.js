@@ -23,8 +23,10 @@ const swarozgarloginUser = async (req, res) => {
 
 // signup a user
 const swarozgarsignupUser = async (req, res) => {
-  const { email, password, location, fullname, gender, phone, dob, interest } =
-    req.body;
+  const { email, password, location, fullname, gender, phone, dob, interest } = req.body;
+
+  console.log(req.body); // Log incoming request data
+  console.log(typeof email, typeof password, typeof location, typeof fullname, typeof gender, typeof phone, typeof dob, typeof interest);
 
   try {
     const user = await swarozgarUser.signup(

@@ -1,53 +1,50 @@
-import { useState,useRef } from "react"
-import { useSignupS } from "../hooks/useSignUpS"
-
+import { useState, useRef } from "react"
+import { useSignUpS } from "../hooks/useSignUpS"
 
 const SignUpS = () => {
-  const[name,setName] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const[location, setLocation] = useState('')
-  const[dob,setDob] = useState('')
-  const[gender,setGender] = useState('')
-  const[phone,setPhone] = useState('')
-  const[interest,setInterest] = useState('')
-  const {signup, error, isLoading} = useSignupS()
+  const [location, setLocation] = useState('')
+  const [dob, setDob] = useState('')
+  const [gender, setGender] = useState('')
+  const [phone, setPhone] = useState('')
+  const [interest, setInterest] = useState('')
+  const { signup, error, isLoading } = useSignUpS()
 
   const rName = useRef();
   const rPhone = useRef();
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if(!name.match("/^[A-Za-z ]+$/"))
-      {
-        alert("Only Characters are Allowed")
-        setName("");
-        rName.current.focus();
-        return;
-      }
-    else if(name.length.trim() < 2)
-      {
-        alert("More than two characters needed")
-        setName("");
-        rName.current.focus();
-        return;
-      }
-      if(phone.length() > 10)
-        {
-          alert("Invalid Phone Number");
-          setPhone("");
-          rPhone.current.focus();
-          return;
-        }
+
+    if (!/^[A-Za-z ]+$/.test(name)) {
+      alert("Only characters are allowed")
+      setName("");
+      rName.current.focus();
+      return;
+    } else if (name.trim().length < 2) {
+      alert("More than two characters needed")
+      setName("");
+      rName.current.focus();
+      return;
+    }
+    if (phone.length > 10) {
+      alert("Invalid Phone Number");
+      setPhone("");
+      rPhone.current.focus();
+      return;
+    }
     await signup(name, email, password, location, dob, gender, phone, interest)
   }
 
   return (
     <form className="signup" onSubmit={handleSubmit}>
-      <h3>Sign Up For Khojshala</h3>
+      <h3>Sign Up For Swarozgar</h3>
       <label>Full Name:</label>
       <input 
         type="text" 
+        ref={rName}
         onChange={(e) => setName(e.target.value)} 
         value={name} 
         required
@@ -80,7 +77,7 @@ const SignUpS = () => {
         value={dob} 
         required
       />
-       <label>Gender:</label>
+      <label>Gender:</label>
       <div>
         <input 
           type="radio" 
@@ -105,12 +102,16 @@ const SignUpS = () => {
         />
         <label htmlFor="female">Female</label>
       </div>
+      <br/><br/>
+      <label>Phone Number:</label>
       <input 
         type="number" 
+        ref={rPhone}
         onChange={(e) => setPhone(e.target.value)} 
         value={phone} 
         required
       />
+      <label>Interest:</label>
       <input 
         type="text" 
         onChange={(e) => setInterest(e.target.value)} 
@@ -118,8 +119,8 @@ const SignUpS = () => {
         required
       />
       <center>
-      <button disabled={isLoading}>Sign up</button>
-      {error && <div className="error">{error}</div>}
+        <button disabled={isLoading}>Sign up</button>
+        {error && <div className="error">{error}</div>}
       </center>
     </form>
   )

@@ -1,14 +1,20 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
+import { useAuthSContext } from './hooks/useAuthSContext'
 
 // pages & components
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import SignUpS from './pages/SignUpS'
 import Navbar from './components/Navbar'
+import Mentor from './pages/Mentor'
 
 function App() {
   const { user } = useAuthContext()
+  const { swarozgaruser } = useAuthSContext()
+
+console.log(swarozgaruser)
 
   return (
     <div className="App">
@@ -28,6 +34,16 @@ function App() {
               path="/signup" 
               element={!user ? <Signup /> : <Navigate to="/" />} 
             />
+            <Route 
+              path="/mentor" 
+              element={!user ? <Mentor /> : <Navigate to="/mentor" />} 
+            />
+
+<Route 
+              path="/signups" 
+              element={ !swarozgaruser ? <SignUpS /> : <Navigate to="/" />} 
+            />
+
           </Routes>
         </div>
       </BrowserRouter>

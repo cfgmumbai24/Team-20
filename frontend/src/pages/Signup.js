@@ -1,15 +1,15 @@
-import { useState,useRef } from "react"
+import { useState, useRef } from "react"
 import { useSignup } from "../hooks/useSignup"
 
 const Signup = () => {
-  const[name,setName] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const[location, setLocation] = useState('')
-  const[dob,setDob] = useState('')
-  const[gender,setGender] = useState('')
-  const[phone,setPhone] = useState('')
-  const {signup, error, isLoading} = useSignup()
+  const [location, setLocation] = useState('')
+  const [dob, setDob] = useState('')
+  const [gender, setGender] = useState('')
+  const [phone, setPhone] = useState('')
+  const { signup, error, isLoading } = useSignup()
 
   const rName = useRef();
   const rEmail = useRef();
@@ -17,27 +17,24 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if(!name.match("/^[A-Za-z ]+$/"))
-      {
-        alert("Only Characters are Allowed")
-        setName("");
-        rName.current.focus();
-        return;
-      }
-    else if(name.length.trim() < 2)
-      {
-        alert("More than two characters needed")
-        setName("");
-        rName.current.focus();
-        return;
-      }
-      if(phone.length() > 10)
-        {
-          alert("Invalid Phone Number");
-          setPhone("");
-          rPhone.current.focus();
-          return;
-        }
+
+    if (!/^[A-Za-z ]+$/.test(name)) {
+      alert("Only characters are allowed")
+      setName("");
+      rName.current.focus();
+      return;
+    } else if (name.trim().length < 2) {
+      alert("More than two characters needed")
+      setName("");
+      rName.current.focus();
+      return;
+    }
+    if (phone.length > 10) {
+      alert("Invalid Phone Number");
+      setPhone("");
+      rPhone.current.focus();
+      return;
+    }
     await signup(name, email, password, location, dob, gender, phone)
   }
 
@@ -47,6 +44,7 @@ const Signup = () => {
       <label>Full Name:</label>
       <input 
         type="text" 
+        ref={rName}
         onChange={(e) => setName(e.target.value)} 
         value={name} 
         required
@@ -54,6 +52,7 @@ const Signup = () => {
       <label>Email address:</label>
       <input 
         type="email" 
+        ref={rEmail}
         onChange={(e) => setEmail(e.target.value)} 
         value={email} 
         required
@@ -79,7 +78,7 @@ const Signup = () => {
         value={dob} 
         required
       />
-       <label>Gender:</label>
+      <label>Gender:</label>
       <div>
         <input 
           type="radio" 
@@ -104,15 +103,18 @@ const Signup = () => {
         />
         <label htmlFor="female">Female</label>
       </div>
+      <br/>
+      <label>Phone Number:</label>
       <input 
         type="number" 
+        ref={rPhone}
         onChange={(e) => setPhone(e.target.value)} 
         value={phone} 
         required
       />
       <center>
-      <button disabled={isLoading}>Sign up</button>
-      {error && <div className="error">{error}</div>}
+        <button disabled={isLoading}>Sign up</button>
+        {error && <div className="error">{error}</div>}
       </center>
     </form>
   )

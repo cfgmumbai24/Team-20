@@ -9,11 +9,12 @@ export const useSignup = () => {
   const signup = async (name, email, password, location, dob, gender, phone) => {
     setIsLoading(true)
     setError(null)
+    const fullname=name
 
-    const response = await fetch('/api/user/signup', {
+    const response = await fetch('http://localhost:4000/api/user/signup', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ name, email, password, location, dob, gender, phone })
+      body: JSON.stringify({ fullname, email, password, location, dob, gender, phone })
     })
     const json = await response.json()
 

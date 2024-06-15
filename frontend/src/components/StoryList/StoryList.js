@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "./StoryList.module.css"; // Import the CSS Module
 import StorySummary from "../StorySummary/StorySummary";
+// import agriculture from '../../public/agriculture.jpeg';
+// import agriculture from '../../public/agriculture.jpeg';
+
 import { useParams } from "react-router-dom";
 import Spinner from "../Spinner/Spinner";
 

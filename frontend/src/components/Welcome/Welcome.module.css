@@ -49,6 +49,7 @@
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .cardHeading {
@@ -89,4 +90,8 @@
 
 .helloWorldButton:hover {
   background-color: #0056b3;
+}
+
+a {
+  text-decoration: none;
 }

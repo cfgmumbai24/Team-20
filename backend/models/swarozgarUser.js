@@ -29,12 +29,12 @@ const swarozgaruserSchema = new Schema({
     required: true,
   },
   phone: {
-    type: Number,
+    type: String,
     required: true,
   },
 
   dob: {
-    type: Date,
+    type: String,
     required: true,
   },
   interest: {

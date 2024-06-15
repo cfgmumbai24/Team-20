@@ -12,6 +12,7 @@ import Mentor from "./pages/Mentor";
 import StoryList from "./components/StoryList/StoryList";
 import StoryDetails from "./components/StoryDetails/StoryDetails";
 import Spinner from "./components/Spinner/Spinner";
+import Welcome from "./components/Welcome/Welcome";
 import StorySummary from "./components/StorySummary/StorySummary";
 import Swarozgar from "./components/Swarrozgar/Swarrozgar";
 
@@ -49,6 +50,8 @@ function App() {
               path="/signups"
               element={!swarozgaruser ? <SignUpS /> : <Navigate to="/" />}
             />
+            <Route path="/test" element={<Spinner />} />
+            <Route path="/welcome" element={<Welcome />} />
             <Route path="/test" element={<Spinner />} />            
              <Route
               path="/test"

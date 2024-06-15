@@ -10,15 +10,16 @@ const StoryDetails = () => {
       "https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630",
     description: `
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
-          <img src="https://via.placeholder.com/400x200" alt="Sample Image 1" />
+          <img src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630" alt="Sample Image 1" />
           <p>Curabitur venenatis ut elit quis tempus. Nulla facilisi. Praesent aliquet, elit eu tincidunt euismod, turpis nisl scelerisque metus, a vulputate nulla odio nec nulla.</p>
-          <img src="https://via.placeholder.com/400x200" alt="Sample Image 2" />
+          <img src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630" alt="Sample Image 2" />
           <p>Donec consequat ultricies justo, sit amet suscipit lorem pharetra at.</p>
         `,
-    backgroundImage: `https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630`
+    backgroundImage: `https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630`,
   };
   return (
     <div className={styles.profileContainer}>
+      <img className={styles.profileContainerImg} src={user.backgroundImage} alt="background image"/>
       <div className={styles.detailsContainer}>
         <div className={styles.userDetails}>
           <p>

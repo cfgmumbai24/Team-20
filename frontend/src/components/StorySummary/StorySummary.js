@@ -6,7 +6,7 @@ const StorySummary = (props) => {
   return (
     <div className={styles.myComponent}>
       <img
-        src={backgroundImage}
+        src={"https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU="}
         alt="Background"
         className={styles.backgroundImage}
         style={{ opacity: 0.3 }}  

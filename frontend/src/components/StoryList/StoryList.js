@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import styles from "./StoryList.module.css"; // Import the CSS Module
 import StorySummary from "../StorySummary/StorySummary";
+// import agriculture from '../../public/agriculture.jpeg';
+// import agriculture from '../../public/agriculture.jpeg';
+
 
 const StoryList = () => {
   // Create an array of JSX elements

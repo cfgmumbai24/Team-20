@@ -49,10 +49,8 @@ function App() {
             <Route
               path="/signups"
               element={!swarozgaruser ? <SignUpS /> : <Navigate to="/" />}
-            />
-            <Route path="/test" element={<Spinner />} />
+            />            
             <Route path="/welcome" element={<Welcome />} />
-            <Route path="/test" element={<Spinner />} />            
              <Route
               path="/test"
               element={<Swarozgar />}

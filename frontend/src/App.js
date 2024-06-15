@@ -12,6 +12,7 @@ import Mentor from "./pages/Mentor";
 import StoryList from "./components/StoryList/StoryList";
 import StoryDetails from "./components/StoryDetails/StoryDetails";
 import Spinner from "./components/Spinner/Spinner";
+import Welcome from "./components/Welcome/Welcome";
 
 function App() {
   const { user } = useAuthContext();
@@ -47,7 +48,8 @@ function App() {
               path="/signups"
               element={!swarozgaruser ? <SignUpS /> : <Navigate to="/" />}
             />
-            <Route path="/test" element={<Spinner />} />            
+            <Route path="/test" element={<Spinner />} />
+            <Route path="/welcome" element={<Welcome />} />
           </Routes>
         </div>
       </BrowserRouter>

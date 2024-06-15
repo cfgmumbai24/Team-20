@@ -25,10 +25,10 @@ const Navbar = () => {
           )}
           {(
             <div>
-               <Link to="/swarozgar_fellowship">Swarozgar fellowship</Link>
-               <Link to="/local_livelihood">Local Livelihood</Link>
-               <Link to="/about_us">About Us</Link>
-               <Link to="/blogs">Blogs</Link>
+                <a href="https://margshala.com/en/blog/" target="_blank" rel="noopener noreferrer">Blogs</a>
+                <a href="https://margshala.com/en/local-livelihoods/" target="_blank" rel="noopener noreferrer">Local Livelihoods</a>
+              <a href="https://margshala.com/en/about-margshala/" target="_blank" rel="noopener noreferrer">About Us</a>
+              <a href="https://margshala.com/en/blog/" target="_blank" rel="noopener noreferrer">Blogs</a>
               <Link to="/login">Login</Link>
               <Link to="/signup">Signup</Link>
             </div>

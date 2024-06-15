@@ -9,6 +9,8 @@ import Signup from './pages/Signup'
 import SignUpS from './pages/SignUpS'
 import Navbar from './components/Navbar'
 import Mentor from './pages/Mentor'
+import Admin from "./pages/Admin"
+import AdminFund from "./pages/AdminFund"
 
 function App() {
   const { user } = useAuthContext()
@@ -37,6 +39,14 @@ console.log(swarozgaruser)
             <Route 
               path="/mentor" 
               element={!user ? <Mentor /> : <Navigate to="/mentor" />} 
+            />
+            <Route 
+              path="/admin" 
+              element={!user ? <Admin /> : <Navigate to="/admin" />} 
+            />
+            <Route 
+              path="/adminfund" 
+              element={!user ? <AdminFund /> : <Navigate to="/adminfund" />} 
             />
 
 <Route 

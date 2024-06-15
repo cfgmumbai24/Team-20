@@ -19,31 +19,6 @@ const StoryDetails = () => {
     backgroundImage: `https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630`,
   };
 
-  const [dataLoading, setDataLoading] = useState(false)
-  const [data, setData] = useState({})
-  const { id } = useParams();
-  useEffect(() => {
-    const fetchStory = async () => {
-      try {
-        fetch('https://localhost.com:4000/api/story/getsingleStory/:id')
-        .then(response => {
-          if(!response.ok) {
-            throw new Error('Network response was not ok!');
-          }
-          return response.json()
-        })
-        .then(d => {
-          setDataLoading(dataLoading => !dataLoading)
-          setData(data => {
-            
-          })
-        })
-      } catch(error) {
-
-      }
-    }
-  }, [id])
-
   return (
     <Link to="/">
       <div className={styles.profileContainer}>

@@ -7,8 +7,10 @@ const createStory = async (req, res) => {
   try {
     console.log("Inside create story");
     const story = await Story.create({ title, desc, image, label, user_id });
+    console.log(story);
     res.status(200).json(story);
   } catch (error) {
+    console.log(error);
     res.status(400).json({ error: error.message });
   }
 };

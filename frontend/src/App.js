@@ -1,17 +1,23 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthContext } from "./hooks/useAuthContext";
+import { useAuthSContext } from "./hooks/useAuthSContext";
 
 // pages & components
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import SignUpS from "./pages/SignUpS";
 import Navbar from "./components/Navbar";
-import StorySummary from "./components/StorySummary/StorySummary";
+import Mentor from "./pages/Mentor";
 import StoryList from "./components/StoryList/StoryList";
 import StoryDetails from "./components/StoryDetails/StoryDetails";
+import Spinner from "./components/Spinner/Spinner";
 
 function App() {
   const { user } = useAuthContext();
+  const { swarozgaruser } = useAuthSContext();
+
+  // console.log(swarozgaruser)
 
   return (
     <div className="App">
@@ -33,6 +39,15 @@ function App() {
             />
             <Route path="/user/generic_stories" element={<StoryList />} />
             <Route path="/user/story/:id" element={<StoryDetails />} />
+            <Route
+              path="/mentor"
+              element={!user ? <Mentor /> : <Navigate to="/mentor" />}
+            />
+            <Route
+              path="/signups"
+              element={!swarozgaruser ? <SignUpS /> : <Navigate to="/" />}
+            />
+            <Route path="/test" element={<Spinner />} />            
           </Routes>
         </div>
       </BrowserRouter>

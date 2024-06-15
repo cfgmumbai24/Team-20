@@ -5,12 +5,14 @@ const mongoose = require("mongoose");
 const workoutRoutes = require("./routes/workouts");
 const userRoutes = require("./routes/user");
 const swarozgaruserRoutes = require("./routes/swarozgaruser");
-
+const storyRoutes = require("./routes/story");
+const cors = require("cors");
 // express app
 const app = express();
 
 // middleware
 app.use(express.json());
+app.use(cors());
 
 app.use((req, res, next) => {
   console.log(req.path, req.method);
@@ -18,9 +20,10 @@ app.use((req, res, next) => {
 });
 
 // routes
-app.use("/api/workouts", workoutRoutes);
+// app.use("/api/workouts", workoutRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/swarozgaruser", swarozgaruserRoutes);
+app.use("/api/story", storyRoutes);
 
 // connect to db
 mongoose

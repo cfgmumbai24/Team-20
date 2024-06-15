@@ -1,7 +1,7 @@
 import { useState, useRef } from "react"
-import { useSignup } from "../hooks/useSignup"
+import { useSignUpS } from "../hooks/useSignUpS"
 
-const Signup = () => {
+const SignUpS = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -9,10 +9,10 @@ const Signup = () => {
   const [dob, setDob] = useState('')
   const [gender, setGender] = useState('')
   const [phone, setPhone] = useState('')
-  const { signup, error, isLoading } = useSignup()
+  const [interest, setInterest] = useState('')
+  const { signup, error, isLoading } = useSignUpS()
 
   const rName = useRef();
-  const rEmail = useRef();
   const rPhone = useRef();
 
   const handleSubmit = async (e) => {
@@ -35,12 +35,12 @@ const Signup = () => {
       rPhone.current.focus();
       return;
     }
-    await signup(name, email, password, location, dob, gender, phone)
+    await signup(name, email, password, location, dob, gender, phone, interest)
   }
 
   return (
     <form className="signup" onSubmit={handleSubmit}>
-      <h3>Sign Up For Khojshala</h3>
+      <h3>Sign Up For Swarozgar</h3>
       <label>Full Name:</label>
       <input 
         type="text" 
@@ -52,7 +52,6 @@ const Signup = () => {
       <label>Email address:</label>
       <input 
         type="email" 
-        ref={rEmail}
         onChange={(e) => setEmail(e.target.value)} 
         value={email} 
         required
@@ -103,13 +102,20 @@ const Signup = () => {
         />
         <label htmlFor="female">Female</label>
       </div>
-      <br/>
+      <br/><br/>
       <label>Phone Number:</label>
       <input 
         type="number" 
         ref={rPhone}
         onChange={(e) => setPhone(e.target.value)} 
         value={phone} 
+        required
+      />
+      <label>Interest:</label>
+      <input 
+        type="text" 
+        onChange={(e) => setInterest(e.target.value)} 
+        value={interest} 
         required
       />
       <center>
@@ -120,4 +126,4 @@ const Signup = () => {
   )
 }
 
-export default Signup
+export default SignUpS

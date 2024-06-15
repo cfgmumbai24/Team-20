@@ -1,7 +1,8 @@
 import { useState,useRef } from "react"
-import { useSignup } from "../hooks/useSignup"
+import { useSignupS } from "../hooks/useSignUpS"
 
-const Signup = () => {
+
+const SignUpS = () => {
   const[name,setName] = useState('');
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -9,10 +10,10 @@ const Signup = () => {
   const[dob,setDob] = useState('')
   const[gender,setGender] = useState('')
   const[phone,setPhone] = useState('')
-  const {signup, error, isLoading} = useSignup()
+  const[interest,setInterest] = useState('')
+  const {signup, error, isLoading} = useSignupS()
 
   const rName = useRef();
-  const rEmail = useRef();
   const rPhone = useRef();
 
   const handleSubmit = async (e) => {
@@ -38,7 +39,7 @@ const Signup = () => {
           rPhone.current.focus();
           return;
         }
-    await signup(name, email, password, location, dob, gender, phone)
+    await signup(name, email, password, location, dob, gender, phone, interest)
   }
 
   return (
@@ -110,6 +111,12 @@ const Signup = () => {
         value={phone} 
         required
       />
+      <input 
+        type="text" 
+        onChange={(e) => setInterest(e.target.value)} 
+        value={interest} 
+        required
+      />
       <center>
       <button disabled={isLoading}>Sign up</button>
       {error && <div className="error">{error}</div>}
@@ -118,4 +125,4 @@ const Signup = () => {
   )
 }
 
-export default Signup
+export default SignUpS

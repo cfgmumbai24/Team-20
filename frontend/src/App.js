@@ -15,6 +15,7 @@ import SignUpS from "./pages/SignUpS"
 import { useAuthSContext } from "./hooks/useAuthSContext";
 import StoryList from "./components/StoryList/StoryList"
 import StoryDetails from "./components/StoryDetails/StoryDetails"
+import CourseWindow from "./components/CourseWindow/CourseWindow";
 
 function App() {
   const { user } = useAuthContext();
@@ -64,6 +65,10 @@ function App() {
              <Route
               path="/test"
               element={<Swarozgar />}
+            />
+            <Route 
+              path="/courses" 
+              element={ <CourseWindow/>} 
             />
         
           </Routes>

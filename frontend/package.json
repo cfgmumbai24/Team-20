@@ -1,10 +1,7 @@
 {
   
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 1af1de21226d5aa3148237b030e0713efbc17c6e
   "name": "frontend",
   
 
@@ -18,7 +15,6 @@
 
 
   "dependencies": {
-<<<<<<< HEAD
   
 
 
@@ -113,18 +109,6 @@
   
 
 
-=======
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.7.2",
-    "date-fns": "^2.28.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
->>>>>>> 1af1de21226d5aa3148237b030e0713efbc17c6e
   },
   
 

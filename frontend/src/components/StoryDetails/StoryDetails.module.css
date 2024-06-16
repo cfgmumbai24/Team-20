@@ -46,6 +46,13 @@
   border-radius: 5px;
 }
 
+.profilePictureAndConnect {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;  
+  align-items: center;
+}
+
 .profilePicture {
   display: flex;
   justify-content: flex-end;

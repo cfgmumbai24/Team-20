@@ -1,0 +1,49 @@
+.app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .filter {
+    width: 30%; /* Adjust width of filter panel as needed */
+    display: none; /* Initially hide the filter panel */
+  }
+  
+  .show {
+    display: block; /* Show the filter panel when .show class is applied */
+  }
+  
+  .courses {
+    width: 65%; /* Adjust width of courses panel as needed */
+    margin: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .filter {
+      display: none; /* Hide filter on smaller screens */
+    }
+  
+    .courses {
+      width: 100%; /* Full width courses on smaller screens */
+    }
+  }
+  
+  .filter-toggle-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .search-bar {
+    margin-bottom: 20px;
+  }
+  

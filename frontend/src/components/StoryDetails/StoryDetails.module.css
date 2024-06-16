@@ -1,0 +1,95 @@
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  border: 1px solid #ccc;
+  max-width: 600px;
+  margin: auto;
+  background-color: #f5f5f5; /* Light background for better contrast /
+  color: #333; / Darker text for better readability /
+  position: relative;
+  overflow: hidden; / Ensure background image doesn't overflow */
+}
+
+.profileContainerImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2; /* Adjust opacity for better contrast /
+  z-index: -1; / Place image behind the content */
+}
+
+.detailsContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.2
+  ); /* Semi-transparent background for readability */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.profilePictureAndConnect {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profilePicture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Semi-transparent white background /
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); / Subtle shadow for better separation */
+}
+
+.profilePicture img {
+  border-radius: 50%;
+  width: 100px; /* Slightly smaller profile picture */
+  height: 100px;
+  object-fit: cover;
+}
+
+.userDescription {
+  margin-top: 20px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Semi-transparent white background /
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); / Subtle shadow for better separation /
+  color: #333; / Ensure text color is readable */
+  z-index: 1;
+}
+
+.userDescription img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

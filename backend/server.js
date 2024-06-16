@@ -1,33 +1,39 @@
-require('dotenv').config()
+require("dotenv").config();
 
-const express = require('express')
-const mongoose = require('mongoose')
-const workoutRoutes = require('./routes/workouts')
-const userRoutes = require('./routes/user')
-
+const express = require("express");
+const mongoose = require("mongoose");
+const workoutRoutes = require("./routes/workouts");
+const userRoutes = require("./routes/user");
+const swarozgaruserRoutes = require("./routes/swarozgaruser");
+const storyRoutes = require("./routes/story");
+const cors = require("cors");
 // express app
-const app = express()
+const app = express();
 
 // middleware
-app.use(express.json())
+app.use(express.json());
+app.use(cors());
 
 app.use((req, res, next) => {
-  console.log(req.path, req.method)
-  next()
-})
+  console.log(req.path, req.method);
+  next();
+});
 
 // routes
-app.use('/api/workouts', workoutRoutes)
-app.use('/api/user', userRoutes)
+// app.use("/api/workouts", workoutRoutes);
+app.use("/api/user", userRoutes);
+app.use("/api/swarozgaruser", swarozgaruserRoutes);
+app.use("/api/story", storyRoutes);
 
 // connect to db
-mongoose.connect(process.env.MONGO_URI)
+mongoose
+  .connect(process.env.MONGO_URI)
   .then(() => {
     // listen for requests
     app.listen(process.env.PORT, () => {
-      console.log('connected to db & listening on port', process.env.PORT)
-    })
+      console.log("connected to db & listening on port", process.env.PORT);
+    });
   })
   .catch((error) => {
-    console.log(error)
-  })
+    console.log(error);
+  });

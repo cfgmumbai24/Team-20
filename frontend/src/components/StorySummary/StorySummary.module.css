@@ -1,0 +1,45 @@
+.myComponent {
+  position: relative;
+  padding: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  position: relative;
+  z-index: 1;  
+  color:black; 
+}
+
+.topLeftText {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.labelsContainer {
+  margin-bottom: 10px;
+}
+
+.label {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.middleLeftText {
+  font-size: 18px;
+}

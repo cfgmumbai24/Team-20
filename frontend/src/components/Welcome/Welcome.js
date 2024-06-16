@@ -18,7 +18,7 @@ const Welcome = () => {
         <span className={styles.lightblue}>shala</span>
       </div>
       <div className={styles.cardsContainer}>
-        <Link to={"/user/generic_stories"}>
+        <Link to={"/signups"}>
           <div
             className={styles.card}
             style={{ backgroundImage: "url(path_to_your_card1_image.jpg)" }}

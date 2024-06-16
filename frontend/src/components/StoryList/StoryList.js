@@ -102,7 +102,7 @@ const StoryList = () => {
     </div>,
   ];
 
-  // Split elements into rows with max 2 columns
+   
   const rows = [];
   for (let i = 0; i < data.length; i += 2) {
     rows.push(data.slice(i, i + 2));

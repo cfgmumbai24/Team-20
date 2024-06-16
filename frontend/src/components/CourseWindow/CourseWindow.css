@@ -21,6 +21,7 @@
   
   .courses {
     width: 65%; /* Adjust width of courses panel as needed */
+    margin: auto;
   }
   
   @media (max-width: 768px) {
